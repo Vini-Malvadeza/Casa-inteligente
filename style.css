@@ -1,43 +1,101 @@
-:root{
-    --cor-fundo: #01080E ;
-    --cor-principal: #0B0D20 ;
-    --cor-secundaria: #212333; 
-    --cor-destaque: #2BDEFD;
-    --cor-texto: #D7F9FF;
+/* Importação de fonte ergonômica para leitura em telas (Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+/* Paleta de cores baseada no Nord Theme (Nordic, Arctic Ice Studio) */
+:root {
+    --cor-fundo: #2E3440;        /* Nord0 - Polar Night (Fundo principal suave, sem preto puro) */
+    --cor-principal: #3B4252;    /* Nord1 - Polar Night (Cartão central) */
+    --cor-secundaria: #434C5E;   /* Nord2 - Polar Night (Botões em repouso) */
+    --cor-destaque: #88C0D0;     /* Nord8 - Frost (Azul gelo dessaturado, confortável aos olhos) */
+    --cor-texto: #ECEFF4;        /* Nord6 - Snow Storm (Branco suave, evita brilho excessivo) */
+    --cor-texto-secundario: #D8DEE9; /* Nord4 - Snow Storm (Texto de apoio) */
 }
 
 body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin: 0;
 }
 
-.caixa-principal{
+.caixa-principal {
     background-color: var(--cor-principal);
     width: 90%;
     max-width: 600px;
     text-align: center;
-    padding: 20px;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
-h1{
+h1, h2 {
     color: var(--cor-destaque);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+p {
+    color: var(--cor-texto-secundario);
+    line-height: 1.7;
+    font-size: 16px;
 }
 
 button {
     background-color: var(--cor-secundaria);
     color: var(--cor-texto);
-    border: none;
-    border-radius: 15px;
-    padding: 15px;
-    transition: background-color 0.3s;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-button:hover{
+button:hover:not(:disabled) {
     background-color: var(--cor-destaque);
-    color: var(--cor-principal);
+    color: var(--cor-fundo);
+}
+
+/* Regras da Parte 3 */
+.caixa-alternativas {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.caixa-alternativas button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    border-color: #4C566A;
+}
+
+/* Regra da Parte 5 */
+.texto-resultado {
+    white-space: pre-line;
+}
+
+/* Regras da Parte 7 */
+.tela-creditos {
+    display: none;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.creditos-btn {
+    display: none;
+}
+
+.tela-creditos p {
+    margin: 10px 0;
+}
+
+.tela-creditos a {
+    color: var(--cor-destaque);
+    text-decoration: underline;
 }
