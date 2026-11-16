@@ -3,12 +3,12 @@
 
 /* Paleta de cores baseada no Nord Theme (Nordic, Arctic Ice Studio) */
 :root {
-    --cor-fundo: #2E3440;        /* Nord0 - Polar Night (Fundo principal suave, sem preto puro) */
-    --cor-principal: #3B4252;    /* Nord1 - Polar Night (Cartão central) */
-    --cor-secundaria: #434C5E;   /* Nord2 - Polar Night (Botões em repouso) */
-    --cor-destaque: #88C0D0;     /* Nord8 - Frost (Azul gelo dessaturado, confortável aos olhos) */
-    --cor-texto: #ECEFF4;        /* Nord6 - Snow Storm (Branco suave, evita brilho excessivo) */
-    --cor-texto-secundario: #D8DEE9; /* Nord4 - Snow Storm (Texto de apoio) */
+    --cor-fundo: #2E3440;            /* Nord0 - Polar Night */
+    --cor-principal: #3B4252;        /* Nord1 - Polar Night */
+    --cor-secundaria: #434C5E;       /* Nord2 - Polar Night */
+    --cor-destaque: #88C0D0;         /* Nord8 - Frost */
+    --cor-texto: #ECEFF4;            /* Nord6 - Snow Storm */
+    --cor-texto-secundario: #D8DEE9; /* Nord4 - Snow Storm */
 }
 
 body {
@@ -98,4 +98,29 @@ button:hover:not(:disabled) {
 .tela-creditos a {
     color: var(--cor-destaque);
     text-decoration: underline;
+}
+
+/* Destaque visual para a tela de Game Over (Nord11 - Aurora Red) */
+.caixa-resultado.gameover {
+    border: 2px solid #BF616A;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 15px;
+    background-color: rgba(191, 97, 106, 0.1);
+}
+
+.caixa-resultado.gameover .titulo-resultado {
+    color: #BF616A;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.caixa-resultado.gameover .novamente-btn {
+    border-color: #BF616A;
+    margin-top: 15px;
+}
+
+.caixa-resultado.gameover .novamente-btn:hover {
+    background-color: #BF616A;
+    color: var(--cor-texto);
 }
